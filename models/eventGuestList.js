@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const EventGuestList = sequelize.define('eventguestlist', {
+    const EventGuestList = sequelize.define('EventGuestList', {
         guest_email: {
             type: DataTypes.STRING,
             allowNull: true
@@ -10,13 +10,15 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    
     EventGuestList.associate = (models) => {
-        EventGuestList.belongsTo(models._Event, {
+        
+        EventGuestList.belongsTo(models.Events, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
-
+    
     return EventGuestList;
 }

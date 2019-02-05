@@ -4,6 +4,13 @@ module.exports = function(sequelize, DataTypes) {
       email: DataTypes.STRING,
       pswd: DataTypes.STRING
     });
-    return User;
+
+  User.associate = (models) => {
+
+    User.hasMany(models.Events, {
+      onDelete: "cascade"
+    });
+  };    
+
+  return User;
 };
-  
