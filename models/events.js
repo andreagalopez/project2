@@ -19,23 +19,20 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     
+    
     Events.associate = (models) => {
 
         Events.hasMany(models.EventGuestList, {
             onDelete: "cascade"
-        });
+        }); 
 
         Events.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
-        Events.belongsTo(models.EventGuestList, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
     };
+    
 
     return Events;
 }
