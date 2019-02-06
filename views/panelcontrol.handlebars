@@ -1,11 +1,124 @@
-<h2>"Hola, "+ user</h2>
-<div class= "container" >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">"Hola!! " + user!</a>
+
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Crear Evento</button>
+        </form>
+    </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
-<p>Eventos a los que estas invitado</p>
+            <p>Eventos a los que estas invitado</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Eventos</th>
+                        <th scope="col">Invitad@</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td> <a href="#">Cumple Juan</a> </td>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">✔️</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">❌</label>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="#">Cumple Chuy</a> </td>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">✔️</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">❌</label>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="">Cumple Jorge</a></td>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">✔️</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">❌</label>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-md-6">
             <p>eventos creador</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Eventos</th>
+                        <th scope="col">Invitad@</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td> <a href="#">Cumple Juan</a> </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary">✏️ Editar</button>
+                            <button type="button" class="btn btn-outline-danger">❌ Eliminar</button>
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="#">Cumple Chuy</a> </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary">✏️ Editar</button>
+
+                            <button type="button" class="btn btn-outline-danger">❌ Eliminar</button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="">Cumple Jorge</a></td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary">✏️ Editar</button>
+                            <button type="button" class="btn btn-outline-danger">❌ Eliminar</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
