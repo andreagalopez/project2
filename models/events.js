@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const _Event = sequelize.define('event', {
+    const Events = sequelize.define('Events', {
         name: {
             type: DataTypes.STRING,
             allowNull: true
@@ -18,18 +18,21 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    _Event.associate = (models) => {
-        _Event.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-        _Event.belongsTo(models.EventGuestList, {
+    
+    
+    Events.associate = (models) => {
+
+        Events.hasMany(models.EventGuestList, {
+            onDelete: "cascade"
+        }); 
+
+        Events.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
+    
 
-    return _Event;
+    return Events;
 }
