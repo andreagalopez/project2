@@ -16,6 +16,13 @@ module.exports = function(app) {
     });
   });
 
+  /*After the login, it should go to the main panel where all the created/invited-to events are shown
+  app.get('/', function(req, res) {
+    db.Events.findAll({ where: { id: }})
+  }; */
+
+
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
