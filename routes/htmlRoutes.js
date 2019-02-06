@@ -61,4 +61,9 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  // Load control panel
+  app.get("/control_panel", function(req, res) {
+    res.render("control_panel");
+  });
 };
