@@ -1,10 +1,15 @@
 var db = require("../models");
 
 module.exports = function(app) {
+
+  app.get("/panel", function(req, res){
+
+    res.render("panelcontrol");
+  });
   // Load index page
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
+      res.render("index1", {
         msg: "Welcome!",
         examples: dbExamples
       });
