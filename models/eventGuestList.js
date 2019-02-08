@@ -9,7 +9,6 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     });
-
     
     EventGuestList.associate = (models) => {
         
