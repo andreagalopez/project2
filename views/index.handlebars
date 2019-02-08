@@ -24,12 +24,12 @@
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Enter Time</label>
-                    <input type="time" class="form-control" id="enter-time" placeholder="time">
+                    <input type="text" class="form-control" id="enter-time" placeholder="time">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Enter Place</label>
-                    <input type="time" class="form-control" id="enter-place" placeholder="place">
+                    <input type="text" class="form-control" id="enter-place" placeholder="place">
                 </div>
 
                 <div class="form-group">
@@ -46,6 +46,8 @@
                                 <tr>
                                     <th scope="col">Guest's e-mail</th>
                                 </tr>
+                            </thead>
+                            <tbody id="guestTable">
                                 {{#each guests}}
                                 <tr>
                                     <td>
@@ -53,9 +55,7 @@
                                     </td>
                                 </tr>
                                 {{/each}}
-                            </thead>
-                            <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -67,3 +67,6 @@
             </form>
         </div>
     </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
