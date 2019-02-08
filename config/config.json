@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "manllo",
+<<<<<<< HEAD
     "database": "partyplanner",
+=======
+    "database": "bamazon",
+>>>>>>> 0584819aced8d1d117d93981a7a842d25364c731
     "host": "localhost",
     "dialect": "mysql"
   },
