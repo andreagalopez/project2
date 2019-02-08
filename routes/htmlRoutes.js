@@ -7,12 +7,10 @@ module.exports = function(app) {
     res.render("panelcontrol");
   });
   // Load index page
-  app.get("/", function (req, res) {
-    console.log(req.body);
-    db.User.findAll({}).then(function (dbExamples) {
+  app.get("/", function(req, res) {
+    db.Guest.findAll({}).then(function(dbGuests) {
       res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        guests: dbGuests
       });
     });
   });
@@ -52,9 +50,9 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Guest.findOne({ where: { id: req.params.id } }).then(function(dbGuests) {
       res.render("example", {
-        example: dbExample
+        example: dbGuests
       });
     });
   });
