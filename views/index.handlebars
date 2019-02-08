@@ -1,33 +1,72 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 justify-content-center">Ready to create and event!</h1>
+            <p class="lead">Let's start to plan your party!</p>
+        </div>
     </div>
-  </div>
-</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Event Name</label>
+                    <input type="text" class="form-control" id="enter-name" placeholder="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Enter Date</label>
+                    <input type="text" class="form-control" id="enter-date" placeholder="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Enter Time</label>
+                    <input type="text" class="form-control" id="enter-time" placeholder="time">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Enter Place</label>
+                    <input type="text" class="form-control" id="enter-place" placeholder="place">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Guest List</label>
+                    <input type="text" class="form-control" id="enter-guest" placeholder="enter email">
+                </div>
+
+                <button id="addBtn" type="button" class="btn btn-primary">Add Guest</button>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table id="guests" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Guest's e-mail</th>
+                                </tr>
+                            </thead>
+                            <tbody id="guestTable">
+                                {{#each guests}}
+                                <tr>
+                                    <td>
+                                        {{this.email}}
+                                    </td>
+                                </tr>
+                                {{/each}}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+                <!-- agregar event listener-->
+
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/index.js"></script>

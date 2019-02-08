@@ -3,16 +3,18 @@ var db = require("../models");
 module.exports = function(app) {
 
   // Load index page
-  app.get("/", function (req, res) {
-    console.log(req.body);
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+  app.get("/", function(req, res) {
+    db.Guest.findAll({}).then(function(dbGuests) {
+      res.render("login", {
+        guests: dbGuests
       });
     });
   });
   
+  app.get("/index", function(req, res){
+    res.render("index");
+  });
+
   app.get("/signup", function (req, res) {
     console.log(req.body);
     res.render("signup");
@@ -42,5 +44,10 @@ module.exports = function(app) {
         invitedEvents: dbEvents
       });
     })
+  });
+
+  // Load control panel
+  app.get("/control_panel", function(req, res) {
+    res.render("control_panel");
   });
 };
