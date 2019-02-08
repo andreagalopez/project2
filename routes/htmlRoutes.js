@@ -9,12 +9,16 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Guest.findAll({}).then(function(dbGuests) {
-      res.render("index", {
+      res.render("login", {
         guests: dbGuests
       });
     });
   });
   
+  app.get("/index", function(req, res){
+    res.render("index");
+  });
+
   app.get("/signup", function (req, res) {
     console.log(req.body);
     res.render("signup");
@@ -33,20 +37,6 @@ module.exports = function(app) {
       // res.status(422).json(err.errors[0].message);
     });
   });
-
-  /*Login get function */
-  app.get("/", function (req, res) {
-    console.log(req.body);
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
-
-
-
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
