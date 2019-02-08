@@ -17,15 +17,20 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Eventos</th>
-                        <th scope="col">Invitad@</th>
+                        <th scope="col">Evento</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Lugar</th>
+                        <th scope="col">Confirmacion@</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td> <a href="#">Cumple Juan</a> </td>
+                    {{#each invitedEvents}}
+                    <tr>                        
+                        <td><a href="#"> {{name}} </a></td>
+                        <td> {{date }} </td>
+                        <td> {{time}} </td>
+                        <td> {{place}} </td>
                         <td>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
@@ -37,48 +42,15 @@
                                     value="option2">
                                 <label class="form-check-label" for="inlineRadio2">❌</label>
                             </div>
-
                         </td>
+                       
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><a href="#">Cumple Chuy</a> </td>
-                        <td>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
-                                <label class="form-check-label" for="inlineRadio1">✔️</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                    value="option2">
-                                <label class="form-check-label" for="inlineRadio2">❌</label>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><a href="">Cumple Jorge</a></td>
-                        <td>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
-                                <label class="form-check-label" for="inlineRadio1">✔️</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                    value="option2">
-                                <label class="form-check-label" for="inlineRadio2">❌</label>
-                            </div>
-
-                        </td>
-                    </tr>
+                     {{/each}}
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">
-            <p>eventos creador</p>
+        {{!-- <div class="col-md-6">
+            <p>Eventos que tu creaste</p>
             <table class="table">
                 <thead>
                     <tr>
@@ -119,6 +91,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> --}}
     </div>
 </div>
