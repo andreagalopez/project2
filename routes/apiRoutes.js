@@ -5,7 +5,7 @@ module.exports = function(app) {
   app.get("/api/user/:id", function(req, res) {
     db.User.findOne({
       where: {
-        id = req.params.id
+        id : req.params.id
       },
       include: [_Event]
     }).then(function(dbExamples) {
@@ -14,12 +14,25 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/event", function(req, res) {
+  app.post("/api/event/", function(req, res) {
     db._Event.create({
       name: req.body.name,
       date: req.body.date,
       time: req.body.time,
-      place: req.body.place
+      place: req.body.place,
+      UserId : req.body.UserId
+
+    }).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
+
+  app.post("/api/user-event/", function(req, res) {
+    db.EventGuetsList.create({
+      guest_email: req.body.email,
+      guest_confirm: false,
+      EventId: req.body.EventId
+      
     }).then(function(dbExample) {
       res.json(dbExample);
     });

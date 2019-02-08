@@ -1,24 +1,27 @@
 module.exports = function (sequelize, DataTypes) {
-    const EventGuestList = sequelize.define('EventGuestList', {
-        guest_email: {
+    const User = sequelize.define('User', {
+        user_email: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        guest_confirm: {
-            type: DataTypes.BOOLEAN,
-            allowNull: true
-        }
+        user_password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        
     });
 
     
-    EventGuestList.associate = (models) => {
-        
-        EventGuestList.belongsTo(models.Events, {
-            foreignKey: {
-                allowNull: false
-            }
+    User.associate = (models) => {
+
+        User.hasMany(models.Events, {
+          onDelete: "cascade"
         });
-    };
+      };    
     
-    return EventGuestList;
+    return User;
 }
