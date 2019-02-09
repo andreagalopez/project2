@@ -10,11 +10,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         time: {
             type: DataTypes.TIME,
-            allowNull: false
+            allowNull: true
         },
         place: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
     });    
     

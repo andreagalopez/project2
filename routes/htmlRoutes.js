@@ -15,16 +15,18 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/signup", function (req, res) {
+  /* app.get("/signup", function (req, res) {
     console.log(req.body);
     res.render("signup");
-  });
+  }); */
 
-  app.post("/signup", function(req, res) {
-    db.User.create({
+  app.post("/index", function(req, res) {
+    db.Events.create({
       name: req.body.name,
-      email: req.body.email,
-      password: req.body.password
+      date: req.body.date,
+      time: req.body.time,
+      place: req.body.place,
+      UserId: 2
     }).then(function() {
       res.redirect(307, "/");
     }).catch(function(err) {
