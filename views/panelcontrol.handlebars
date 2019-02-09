@@ -1,7 +1,15 @@
 <nav class="navbar navbar-light" style="background-color: #cce6ff;">
     <div class="container">
+
+        <a class="navbar-brand" href="#">"HOLA!"</a>
+
+        <form id="form" class="form-inline my-2 my-lg-0 ml-auto">
+
+
         <a class="navbar-brand" href="/index">Hola, Usuario</a>
         <form class="form-inline my-2 my-lg-0 ml-auto">
+
+
             <a class="btn btn-outline-success my-2 my-sm-0" href="/index">Crear Evento</a>
         </form>
     </div>
@@ -9,9 +17,7 @@
 <br>
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-12">
-            <h3>Eventos a los que estas invitado</h3>
-            <table class="ta    ble">
+
                 <thead>
                     <tr>
                         <th scope="col">Evento</th>
@@ -32,6 +38,7 @@
                             <button type="button" class="btn btn-primary" id="confirmTrue" value="1">🗸</button>
                             <button type="button" class="btn btn-danger" id="confirmFalse" value="0">✘</button>
                         </td>
+
                     </tr>
                     {{/each}}
                 </tbody>
@@ -82,3 +89,44 @@
         </div> --}}
     </div>
 </div>
+
+<style>
+    nav {
+        opacity: 0.9;
+    }
+
+    .navbar-brand {
+        color: white;
+        text-align: center;
+        font-weight: 900;
+    }
+
+    th {
+        color: white;
+        text-shadow: 2px 2px black;
+        text-align: center;
+    }
+
+    .head {
+        color: white;
+        text-shadow: 2px 2px black;
+        text-align: center;
+    }
+
+    body {
+        background-image: url("https://nyc3.digitaloceanspaces.com/servercarlosesverde/elevenews/wp-content/uploads/2018/12/12222219/Party.jpg");
+        background-color: blanchedalmond;
+        background-size: 100%;
+    }
+
+    form {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5cm;
+        width: 50%;
+        height: 50%;
+    }
+</style>
