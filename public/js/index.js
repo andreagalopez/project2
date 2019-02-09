@@ -1,17 +1,18 @@
-var name = $("#txtFirstName");
-var email = $("#txtEmail");
-var password = $("#txtPassword");
-var submitBtn = $("#submitBtn");
+var name = $("#enterName");
+var date = $("#enterDate");
+var time = $("#enterTime");
+var place = $("#enterPlace");
+var submit = $("#submitBtn");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  insertUser: function (example) {
+  postEvent: function (example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "/signup",
+      url: "/index",
       data: JSON.stringify(example)
     });
   },
@@ -61,7 +62,7 @@ var refreshExamples = function () {
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function (event) {
-  event.preventDefault();
+  //event.preventDefault();
 
 /*   var example = {
     text: $exampleText.val().trim(),
@@ -73,11 +74,12 @@ var handleFormSubmit = function (event) {
     return;
   } */
 
-  API.insertUser(example);
+  API.postEvent(event);
 
   name.val("");
-  email.val("");
-  password.val("");
+  date.val("");
+  time.val("");
+  place.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -93,7 +95,7 @@ var handleDeleteBtnClick = function () {
 };
 
 // Add event listeners to the submit and delete buttons
-$("#submitBtn").on("click", handleFormSubmit);
+submit.on("click", handleFormSubmit);
 
 $("#exampleList").on("click", ".delete", handleDeleteBtnClick);
 $("#addBtn").on("click", function (event) {

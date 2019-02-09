@@ -1,27 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light" style="background-color: #cce6ff;">
     <div class="container">
+
         <a class="navbar-brand" href="#">"HOLA!"</a>
 
         <form id="form" class="form-inline my-2 my-lg-0 ml-auto">
 
+
+        <a class="navbar-brand" href="/index">Hola, Usuario</a>
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+
+
             <a class="btn btn-outline-success my-2 my-sm-0" href="/index">Crear Evento</a>
         </form>
     </div>
-    </div>
 </nav>
-
+<br>
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-6">
-            <p class="head">Eventos a los que estas invitado:</p>
-            <table class="table">
+
                 <thead>
                     <tr>
                         <th scope="col">Evento</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Hora</th>
                         <th scope="col">Lugar</th>
-                        <th scope="col">Confirmacion@</th>
+                        <th scope="col">Confirmacion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,16 +35,8 @@
                         <td> {{time}} </td>
                         <td> {{place}} </td>
                         <td>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
-                                <label class="form-check-label" for="inlineRadio1">✔️</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                    value="option2">
-                                <label class="form-check-label" for="inlineRadio2">❌</label>
-                            </div>
+                            <button type="button" class="btn btn-primary" id="confirmTrue" value="1">🗸</button>
+                            <button type="button" class="btn btn-danger" id="confirmFalse" value="0">✘</button>
                         </td>
 
                     </tr>
@@ -49,7 +44,7 @@
                 </tbody>
             </table>
         </div>
-        {{!-- <div class="col-md-6">
+        {{!-- <div class="col-md-6">    
             <p>Eventos que tu creaste</p>
             <table class="table">
                 <thead>
